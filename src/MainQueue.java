@@ -9,7 +9,7 @@ public class MainQueue {
         Node front, rear;
     }
 
-    static void addQueue(Queue q, int value) {
+    static void enQueue(Queue q, int value) {
         Node temp = new Node();
         temp.data = value;
         if (q.front == null) {
@@ -21,7 +21,7 @@ public class MainQueue {
         q.rear.link = q.front;
     }
 
-    static int deleteQueue(Queue q) {
+    static int deQueue(Queue q) {
         if (q.front == null) {
             System.out.printf("Queue is empty");
             return Integer.MIN_VALUE;
@@ -54,19 +54,19 @@ public class MainQueue {
         Queue q = new Queue();
         q.front = q.rear = null;
 
-        addQueue(q, 14);
-        addQueue(q, 22);
-        addQueue(q, 30);
+        enQueue(q, 14);
+        enQueue(q, 22);
+        enQueue(q, 30);
 
         displayQueue(q);
 
-        System.out.printf("Deleted value = % d \n", deleteQueue(q));
-        System.out.printf("Deleted value = % d \n", deleteQueue(q));
+        System.out.printf("Deleted value = % d \n", deQueue(q));
+        System.out.printf("Deleted value = % d \n", deQueue(q));
 
         displayQueue(q);
 
-        addQueue(q, 9);
-        addQueue(q, 1996);
+        enQueue(q, 9);
+        enQueue(q, 1996);
         displayQueue(q);
     }
 }
